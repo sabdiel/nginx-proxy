@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+         online:
+              build: ../my-apps/online
+              image: online:0.1
+              container_name: online
+         time-duration-calculator:
+               build: ../my-apps/time-duration-calculator
+               image: time-duration-calculator:0.1
+               container_name: time-duration-calculator
+         nginx-proxy:
+              build: ../my-apps/nginx-proxy
+              image: nginx-proxy:0.1
+              container_name: nginx-proxy
+              ports:
+                   - "80:80"
